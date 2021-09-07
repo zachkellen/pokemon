@@ -8,7 +8,7 @@ function App() {
 
   const fetchAPI = (event) => {
     event.preventDefault();
-    axios.get('https://pokeapi.co/api/v2/pokemon')
+    axios.get('https://pokeapi.co/api/v2/pokemon?limit=807')
       // .then(res => res.json())
       .then(res => {
         console.log(res.data.results)
