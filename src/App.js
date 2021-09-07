@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import axios from 'axios';
 
 function App() {
 
@@ -7,11 +8,11 @@ function App() {
 
   const fetchAPI = (event) => {
     event.preventDefault();
-    fetch('https://pokeapi.co/api/v2/pokemon')
-      .then(res => res.json())
+    axios.get('https://pokeapi.co/api/v2/pokemon')
+      // .then(res => res.json())
       .then(res => {
-        console.log(res.results[0].name)
-        setPokemon(res.results)
+        console.log(res.data.results)
+        setPokemon(res.data.results)
       })
       .catch(err => console.log(err));
   }
